@@ -5,7 +5,7 @@ Data analysis of the file: ../HILLS
 - Command line: /home/wei-tse/.local/bin/plot_xy -i ../HILLS -x Time (ns) -cx ps to ns -y Height (kT) -cy kJ/mol to kT -n hills -c 3
 Analyzing the file ... 
 Plotting and saving figure ...
-The average of height: 0.038 (RMSF: 1.990, max: 1.111, min: 0.002)
+The average of height: 0.038 (RMSF: 1.982, max: 1.111, min: 0.002)
 The maximum of height occurs at 0.001 ns.
-The minimum of height occurs at 4.974 ns.
-The height (0.038 kT) at 2.716 ns is closet to the average.
+The minimum of height occurs at 4.962 ns.
+The height (0.038 kT) at 0.889 ns is closet to the average.
