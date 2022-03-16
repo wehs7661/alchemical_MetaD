@@ -1,9 +1,9 @@
 Section 1: Parameters for data analysis
 =======================================
-- Command line: bootstrap_estimator.py -d ./ -n 10 20 50 100 200 500 1000 2000 -hh HILLS_2D -t 0.2
+- Command line: bootstrap_estimator.py -d ./ -n 200 500 1000 2000 -hh HILLS_2D -t 0.2 -a 0.2
 - Current working directory: ./
 - Files analyzed/used: plumed_sum_bias.dat, HILLS_2D, and COLVAR output by the simulation
-- Number of blocks: [10, 20, 50, 100, 200, 500, 1000, 2000]
+- Number of blocks: [200, 500, 1000, 2000]
 - Number of bootstrap iterations: 200
 - Truncated fraction: 0.2
 - Averaged fraction: 0.2
@@ -16,14 +16,10 @@ Section 2: Results of free energy calculations
 +-------------+-----------------+-----------------------------+------------------+
 | # of blocks | Block size (ps) | Free energy difference (kT) | Uncertainty (kT) |
 +-------------+-----------------+-----------------------------+------------------+
-|      10     |      4000.00    |          -1.906644          |     0.035925     |
-|      20     |      2000.00    |          -1.906644          |     0.040582     |
-|      50     |      800.00     |          -1.906644          |     0.054882     |
-|     100     |      400.00     |          -1.906644          |     0.069707     |
-|     200     |      200.00     |          -1.906644          |     0.062977     |
-|     500     |       80.00     |          -1.906644          |     0.065393     |
-|     1000    |       40.00     |          -1.906644          |     0.063551     |
-|     2000    |       20.00     |          -1.906644          |     0.053050     |
+|     200     |      800.00     |          -1.655159          |     0.027907     |
+|     500     |      320.00     |          -1.655159          |     0.029642     |
+|     1000    |      160.00     |          -1.655159          |     0.031210     |
+|     2000    |       80.00     |          -1.655159          |     0.029343     |
 +-------------+-----------------+-----------------------------+------------------+
 
 Section 3: Information about the analysis process
@@ -34,8 +30,8 @@ Section 3: Information about the analysis process
 +--------------------+------------------+
 |   Function name    | Max memory usage |
 +--------------------+------------------+
-|  block_bootstrap   |      6.77 GB     |
-|    average_bias    |     206.34 MB    |
-| read_plumed_output |     396.86 MB    |
+|  block_bootstrap   |     26.30 GB     |
+|    average_bias    |     164.18 MB    |
+| read_plumed_output |      1.19 GB     |
 +--------------------+------------------+
-- Time elapsed:  1081.66 seconds.
+- Time elapsed:  1316.48 seconds.
