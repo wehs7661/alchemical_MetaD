@@ -40,7 +40,14 @@ if __name__ == "__main__":
 
     for i in range(len(f_min)):
         shifted_theta = np.abs(theta - theta_min[i])
-        min_idx = list(shifted_theta).index(np.min(shifted_theta))
+        k = list(shifted_theta)
+        k.remove(np.min(shifted_theta))
+        k.remove(np.min(k))
+        min_idx = k.index(np.min(k))
+        # min_idx = list(shifted_theta).index(np.min(shifted_theta))
+        print(int(t[min_idx]))
+        import sys
+        sys.exit()
         
         L.logger(f'Minimum {i + 1} is at {theta_min[i]} (f = {f_min[i]} kT).')
         L.logger(f'Closet configuration is at {t[min_idx]} ps, whose dihedral is {theta[min_idx]}.')
