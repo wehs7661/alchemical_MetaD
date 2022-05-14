@@ -298,10 +298,10 @@ if __name__ == "__main__":
         else:
             multi_b_size = True
             try:
-                os.system(f'rm -r {folder}FES')
+                os.system(f'rm -r {folder}FES_t_{args.truncate}_a_{args.avg}')
             except:
                 pass
-            os.makedirs(folder + 'FES')
+            os.makedirs(folder + f'FES_t_{args.truncate}_a_{args.avg}')
             if len(args.n_blocks) == 3:
                 n_blocks = np.arange(
                     args.nblocks[0], args.n_blocks[1] + args.n_blocks[2], args.n_blocks[2])
@@ -426,7 +426,7 @@ if __name__ == "__main__":
             if multi_b_size is False:  # only one fes_*.dat
                 fes_path = f'{folder}/fes_truncate_{truncate}_bsize_{b_sizes[i]}_avg_{avg_frac}.dat'
             else:
-                fes_path = f'{folder}FES/fes_bsize_{b_sizes[i]}.dat'
+                fes_path = f'{folder}FES_t_{truncate}_a_{avg_frac}/fes_bsize_{b_sizes[i]}.dat'
 
             bootstrap_args = (traj, n_blocks[i], args.factor, fes_path, B)
             bootstrap_kw = {'T': T, 'truncate': truncate, 'CV': args.CV_name}
