@@ -1,0 +1,40 @@
+
+Data analysis of the file: COLVAR
+=================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_3/Test_1
+- Command line: /jet/home/wehs7661/.local/bin/plot_hist -i COLVAR -x $\lambda$ -nb 40 -n lambda_hist
+Assessment of the hsitogram flatness: N_ratio = 2.624
+The maximum of $\lambda$ is 39.000000.
+The minimum of $\lambda$ is 0.000000.
+The total number of counts is 10000001.
+$\lambda$ between 0.000000 and 0.975000 has the highest count, which is 487027.
+
+Data analysis of the file: COLVAR
+=================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_3/Test_1
+- Command line: /jet/home/wehs7661/.local/bin/plot_hist -i COLVAR -x $lambda$ -nb 40 -n lambda_hist -d
+Assessment of the hsitogram flatness: N_ratio = 2.624
+The maximum of $lambda$ is 39.000000.
+The minimum of $lambda$ is 0.000000.
+The total number of counts is 10000001.
+$lambda$ between 0.000000 and 0.975000 has the highest count, which is 487027.
+
+Data analysis of the file: COLVAR
+=================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_3/Test_1
+- Command line: /jet/home/wehs7661/.local/bin/plot_hist -i COLVAR -x $lambda$ -nb 40 -n lambda_hist -d
+Assessment of the hsitogram flatness: N_ratio = 2.624
+The maximum of $lambda$ is 39.000000.
+The minimum of $lambda$ is 0.000000.
+The total number of counts is 10000001.
+$lambda$ between 0.000000 and 0.975000 has the highest count, which is 487027.
+
+Data analysis of the file: COLVAR
+=================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_3/Test_1
+- Command line: /jet/home/wehs7661/.local/bin/plot_hist -i COLVAR -x Alchemical state -nb 40 -n lambda_hist -d
+Assessment of the hsitogram flatness: N_ratio = 2.624
+The maximum of alchemical state is 39.000000.
+The minimum of alchemical state is 0.000000.
+The total number of counts is 10000001.
+Alchemical state between 0.000000 and 0.975000 has the highest count, which is 487027.

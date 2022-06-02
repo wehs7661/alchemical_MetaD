@@ -1,0 +1,10 @@
+
+Data analysis of the file: analysis.dat
+=======================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_3/Test_1
+- Command line: /jet/home/wehs7661/.local/bin/plot_hist -i analysis.dat -x Number of water molecules -c 2 -n water_hist
+Assessment of the hsitogram flatness: N_ratio = inf
+The maximum of number of water molecules is 10.440992.
+The minimum of number of water molecules is 0.697573.
+The total number of counts is 100001.
+Number of water molecules between 8.638459 and 8.687177 has the highest count, which is 3925.
