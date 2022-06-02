@@ -2,7 +2,7 @@
 #SBATCH --job-name sys1_1D_lambda
 #SBATCH -p RM
 #SBATCH -N 1
-#SBATCH -t 4:00:00
+#SBATCH -t 12:00:00
 #SBATCH --ntasks-per-node=128
 
 source /jet/home/${USER}/src/PLUMED/plumed2.8.0/plumed2/sourceme.sh

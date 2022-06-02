@@ -1,0 +1,15 @@
+
+
+The log file(s) to be analyzed: EXE.log.
+Length of the simulation for the weights average calculation: 20 ns.
+
+Data analysis of the file EXE.log:
+==================================
+0.00000 0.17871 0.24864 -0.12678 -2.05853 -2.95056 
+The uncertainty of the free energy difference is 0.425 kT.
+
+Or at the simulation temperature (298.0 K), the uncertainty is 0.252 kcal/mol
+
+The adjusted weights are (RMSD: 0.09452595684321986): 0.00000 0.15095 0.08792 -0.57524 -2.34921 -2.89722 
+The starting point of the weights average calculation is less than 0!
+Please specified a shorter length of simulation for the weights average calculation.

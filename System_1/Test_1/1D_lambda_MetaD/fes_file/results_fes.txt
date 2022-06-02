@@ -1,0 +1,9 @@
+
+Data analysis of the file: fes_4999.dat
+=======================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_1/Test_1/1D_lambda_MetaD/fes_file
+- Command line: /jet/home/wehs7661/.local/bin/plot_xy -i fes_4999.dat -x Alchemical state -y Free energy (kT) -cy kJ/mol to kT -n fes
+Analyzing the file ... 
+Plotting and saving figure ...
+Maximum of free energy: 3.395 kT, which occurs at 1.000.
+Minimum of free energy: 0.000 kT, which occurs at 5.000.

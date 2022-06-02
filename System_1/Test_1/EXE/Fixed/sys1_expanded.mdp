@@ -105,4 +105,4 @@ lmc-move                 = metropolized-gibbs
 
 ; lambda-states          = 1      2      3      4      5      6     
 vdw-lambdas              = 0.00   0.20   0.40   0.60   0.80   1.00   
-init-lambda-weights      = 0.00000 0.25834 0.24460 -0.47365 -2.16716 -2.73468
+init-lambda-weights      = 0.00000 0.17871 0.21508 -0.41333 -2.25366 -2.86079

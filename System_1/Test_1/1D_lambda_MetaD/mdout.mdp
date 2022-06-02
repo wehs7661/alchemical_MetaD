@@ -1,15 +1,15 @@
 ;
 ;	File 'mdout.mdp' was generated
-;	By user: unknown (69010)
-;	On host: r003.ib.bridges2.psc.edu
-;	At date: Mon Mar 14 01:31:51 2022
+;	By user: wehs7661 (69010)
+;	On host: br012.ib.bridges2.psc.edu
+;	At date: Fri May 20 19:36:04 2022
 ;
 ;	Created by:
 ;	              :-) GROMACS - gmx grompp, 2021.4-plumed-2.8.0 (-:
 ;	
 ;	Executable:   /jet/home/wehs7661/pkgs/gromacs/2021.4/bin/gmx_mpi
 ;	Data prefix:  /jet/home/wehs7661/pkgs/gromacs/2021.4
-;	Working dir:  /ocean/projects/cts160011p/wehs7661/MetaD_EXE_TestSys/New_tests/System_1/Test_1/1D_lambda_MetaD
+;	Working dir:  /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_1/Test_1/1D_lambda_MetaD
 ;	Command line:
 ;	  gmx_mpi grompp -f sys1_expanded.mdp -c sys1.gro -p sys1.top -o sys1_EXE.tpr
 
