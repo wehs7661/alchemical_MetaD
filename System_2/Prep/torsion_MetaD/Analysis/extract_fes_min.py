@@ -45,12 +45,12 @@ if __name__ == "__main__":
         k.remove(np.min(k))
         min_idx = k.index(np.min(k))
         # min_idx = list(shifted_theta).index(np.min(shifted_theta))
-        print(int(t[min_idx]))
-        import sys
-        sys.exit()
+        # print(int(t[min_idx]))
+        # import sys
+        # sys.exit()
         
         L.logger(f'Minimum {i + 1} is at {theta_min[i]} (f = {f_min[i]} kT).')
         L.logger(f'Closet configuration is at {t[min_idx]} ps, whose dihedral is {theta[min_idx]}.')
         L.logger("Extracting the configurations ...\n")
-        os.system(f'echo 0 | gmx trjconv -f ../*xtc -s ../*tpr -o sys2_min_{labels[i]}.gro -dump {int(t[min_idx])}')
+        os.system(f'echo 0 | gmx_mpi trjconv -f ../*xtc -s ../*tpr -o sys2_min_{labels[i]}.gro -dump {int(t[min_idx])}')
 

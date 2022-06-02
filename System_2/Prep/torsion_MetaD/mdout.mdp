@@ -1,17 +1,17 @@
 ;
 ;	File 'mdout.mdp' was generated
-;	By user: wei-tse (1000)
-;	On host: castlepeak
-;	At date: Sun Feb 20 20:00:47 2022
+;	By user: wehs7661 (69010)
+;	On host: br011.ib.bridges2.psc.edu
+;	At date: Sun May 22 13:41:15 2022
 ;
 ;	Created by:
-;	              :-) GROMACS - gmx grompp, 2021.4-plumed-2.7.3 (-:
+;	              :-) GROMACS - gmx grompp, 2021.4-plumed-2.8.0 (-:
 ;	
-;	Executable:   /usr/local/gromacs/bin/gmx
-;	Data prefix:  /usr/local/gromacs
-;	Working dir:  /home/wei-tse/Documents/alchemical_MetaD/System_2/Prep/torsion_MetaD
+;	Executable:   /jet/home/wehs7661/pkgs/gromacs/2021.4/bin/gmx_mpi
+;	Data prefix:  /jet/home/wehs7661/pkgs/gromacs/2021.4
+;	Working dir:  /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Prep/torsion_MetaD
 ;	Command line:
-;	  gmx grompp -f md.mdp -c sys2_md_nvt.gro -p sys2.top -o sys2.tpr
+;	  gmx_mpi grompp -f md.mdp -c sys2_md_nvt.gro -p sys2.top -o sys2.tpr
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -141,13 +141,13 @@ tc_grps                  = System
 tau_t                    = 0.5
 ref_t                    = 298
 ; pressure coupling     
-pcoupl                   = Parrinello-Rahman
-pcoupltype               = isotropic
+pcoupl                   = no
+pcoupltype               = Isotropic
 nstpcouple               = -1
 ; Time constant (ps), compressibility (1/bar) and reference P (bar)
-tau-p                    = 5.0
-compressibility          = 4.5e-5
-ref-p                    = 1.0
+tau-p                    = 1
+compressibility          = 
+ref-p                    = 
 ; Scaling of reference coordinates, No, All or COM
 refcoord-scaling         = No
 

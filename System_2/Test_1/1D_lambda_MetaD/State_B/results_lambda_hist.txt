@@ -1,0 +1,10 @@
+
+Data analysis of the file: COLVAR
+=================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Test_1/1D_lambda_MetaD/State_B
+- Command line: /jet/home/wehs7661/.local/bin/plot_hist -i COLVAR -x Alchemical state -nb 20 -n lambda_hist
+Assessment of the hsitogram flatness: N_ratio = 1.102
+The maximum of alchemical state is 19.000000.
+The minimum of alchemical state is 0.000000.
+The total number of counts is 10000001.
+Alchemical state between 18.050000 and 19.000000 has the highest count, which is 523761.

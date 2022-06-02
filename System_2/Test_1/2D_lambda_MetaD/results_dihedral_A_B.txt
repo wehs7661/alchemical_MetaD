@@ -1,0 +1,22 @@
+
+Data analysis of the file: State_A/dihedral.dat
+===============================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Test_1/2D_lambda_MetaD
+- Command line: /jet/home/wehs7661/.local/bin/plot_xy -x Time (ns) -cx ps to ns -fx 2 -y Torsional angle (degree) -cy radian to degree -t Sampled dihedral in 2D alchemical metadynamics -n dihedral_A_B -l Starting from State A Starting from State B -i State_A/dihedral.dat State_B/dihedral.dat
+Analyzing the file ... 
+Plotting and saving figure ...
+The average of torsional angle: 0.109 (RMSF: 968.645, max: 180.000, min: -179.999)
+The maximum of torsional angle occurs at 127.060 ns.
+The minimum of torsional angle occurs at 14.238 ns.
+The torsional angle (0.108 degree) at 10.904 ns is closet to the average.
+
+Data analysis of the file: State_B/dihedral.dat
+===============================================
+- Working directory: /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Test_1/2D_lambda_MetaD
+- Command line: /jet/home/wehs7661/.local/bin/plot_xy -x Time (ns) -cx ps to ns -fx 2 -y Torsional angle (degree) -cy radian to degree -t Sampled dihedral in 2D alchemical metadynamics -n dihedral_A_B -l Starting from State A Starting from State B -i State_A/dihedral.dat State_B/dihedral.dat
+Analyzing the file ... 
+Plotting and saving figure ...
+The average of torsional angle: 0.075 (RMSF: 1414.265, max: 180.000, min: -180.000)
+The maximum of torsional angle occurs at 100.754 ns.
+The minimum of torsional angle occurs at 42.330 ns.
+The torsional angle (0.074 degree) at 191.080 ns is closet to the average.

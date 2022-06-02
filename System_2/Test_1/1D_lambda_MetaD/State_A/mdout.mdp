@@ -1,17 +1,17 @@
 ;
 ;	File 'mdout.mdp' was generated
-;	By user: wei-tse (1000)
-;	On host: castlepeak
-;	At date: Fri Mar 11 20:02:16 2022
+;	By user: wehs7661 (69010)
+;	On host: br011.ib.bridges2.psc.edu
+;	At date: Sun May 22 15:29:17 2022
 ;
 ;	Created by:
-;	              :-) GROMACS - gmx grompp, 2021.4-plumed-2.7.3 (-:
+;	              :-) GROMACS - gmx grompp, 2021.4-plumed-2.8.0 (-:
 ;	
-;	Executable:   /usr/local/gromacs/bin/gmx
-;	Data prefix:  /usr/local/gromacs
-;	Working dir:  /home/wei-tse/Documents/alchemical_MetaD/System_2/Test_1/1D_lambda_MetaD/State_A
+;	Executable:   /jet/home/wehs7661/pkgs/gromacs/2021.4/bin/gmx_mpi
+;	Data prefix:  /jet/home/wehs7661/pkgs/gromacs/2021.4
+;	Working dir:  /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Test_1/1D_lambda_MetaD/State_A
 ;	Command line:
-;	  gmx grompp -f sys2_expanded.mdp -c sys2_min_A.gro -p sys2.top -o sys2.tpr
+;	  gmx_mpi grompp -f sys2_expanded.mdp -c sys2_min_A.gro -p sys2.top -o sys2.tpr
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -25,7 +25,7 @@ integrator               = md-vv
 ; Start time and timestep in ps
 tinit                    = 0
 dt                       = 0.002
-nsteps                   = 25000000
+nsteps                   = 100000000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
@@ -285,13 +285,13 @@ sim-temp-high            = 300
 
 ; expanded ensemble variables
 nstexpanded              = 10
-lmc-stats                = wang-landau
+lmc-stats                = no
 lmc-move                 = metropolized-gibbs
-lmc-weights-equil        = wl-delta
+lmc-weights-equil        = no
 weight-equil-number-all-lambda = -1
 weight-equil-number-samples = -1
 weight-equil-number-steps = -1
-weight-equil-wl-delta    = 0.001
+weight-equil-wl-delta    = -1
 weight-equil-count-ratio = -1
 
 ; Seed for Monte Carlo in lambda space
@@ -306,7 +306,7 @@ mininum-var-min          = 100
 weight-c-range           = 0
 wl-scale                 = 0.8
 wl-ratio                 = 0.8
-init-wl-delta            = 0.5
+init-wl-delta            = 1
 wl-oneovert              = no
 
 ; Ion/water position swapping for computational electrophysiology setups

@@ -1,17 +1,17 @@
 ;
 ;	File 'mdout.mdp' was generated
-;	By user: wei-tse (1000)
-;	On host: castlepeak
-;	At date: Sun Feb 20 21:39:27 2022
+;	By user: wehs7661 (69010)
+;	On host: br011.ib.bridges2.psc.edu
+;	At date: Sun May 22 15:31:22 2022
 ;
 ;	Created by:
-;	                     :-) GROMACS - gmx grompp, 2018.1 (-:
+;	              :-) GROMACS - gmx grompp, 2021.4-plumed-2.8.0 (-:
 ;	
-;	Executable:   /usr/bin/gmx
-;	Data prefix:  /usr
-;	Working dir:  /home/wei-tse/Documents/alchemical_MetaD/System_2/Test_1/1D_lambda_MetaD/State_B
+;	Executable:   /jet/home/wehs7661/pkgs/gromacs/2021.4/bin/gmx_mpi
+;	Data prefix:  /jet/home/wehs7661/pkgs/gromacs/2021.4
+;	Working dir:  /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Test_1/1D_lambda_MetaD/State_B
 ;	Command line:
-;	  gmx grompp -f sys2_expanded.mdp -c sys2_min_B.gro -p sys2.top -o sys2.tpr
+;	  gmx_mpi grompp -f sys2_expanded.mdp -c sys2_min_B.gro -p sys2.top -o sys2.tpr
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -25,11 +25,13 @@ integrator               = md-vv
 ; Start time and timestep in ps
 tinit                    = 0
 dt                       = 0.002
-nsteps                   = 25000000
+nsteps                   = 100000000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
 simulation-part          = 1
+; Multiple time-stepping
+mts                      = no
 ; mode for center of mass motion removal
 comm-mode                = Linear
 ; number of steps for center of mass motion removal
@@ -77,12 +79,10 @@ compressed-x-grps        =
 energygrps               = 
 
 ; NEIGHBORSEARCHING PARAMETERS
-; cut-off scheme (Verlet: particle based cut-offs, group: using charge groups)
+; cut-off scheme (Verlet: particle based cut-offs)
 cutoff-scheme            = verlet
 ; nblist update frequency
 nstlist                  = 10
-; ns algorithm (simple or grid)
-ns_type                  = grid
 ; Periodic boundary conditions: xyz, no, xy
 pbc                      = xyz
 periodic-molecules       = no
@@ -127,31 +127,7 @@ ewald-rtol-lj            = 0.001
 lj-pme-comb-rule         = Geometric
 ewald_geometry           = 3d
 epsilon_surface          = 0
-
-; IMPLICIT SOLVENT ALGORITHM
-implicit-solvent         = No
-
-; GENERALIZED BORN ELECTROSTATICS
-; Algorithm for calculating Born radii
-gb-algorithm             = Still
-; Frequency of calculating the Born radii inside rlist
-nstgbradii               = 1
-; Cutoff for Born radii calculation; the contribution from atoms
-; between rlist and rgbradii is updated every nstlist steps
-rgbradii                 = 1
-; Dielectric coefficient of the implicit solvent
-gb-epsilon-solvent       = 80
-; Salt concentration in M for Generalized Born models
-gb-saltconc              = 0
-; Scaling factors used in the OBC GB model. Default values are OBC(II)
-gb-obc-alpha             = 1
-gb-obc-beta              = 0.8
-gb-obc-gamma             = 4.85
-gb-dielectric-offset     = 0.009
-sa-algorithm             = Ace-approximation
-; Surface tension (kJ/mol/nm^2) for the SA (nonpolar surface) part of GBSA
-; The value -1 will set default value for Still/HCT/OBC GB-models.
-sa-surface-tension       = -1
+implicit-solvent         = no
 
 ; OPTIONS FOR WEAK COUPLING ALGORITHMS
 ; Temperature coupling  
@@ -177,28 +153,8 @@ refcoord-scaling         = No
 
 ; OPTIONS FOR QMMM calculations
 QMMM                     = no
-; Groups treated Quantum Mechanically
+; Groups treated with MiMiC
 QMMM-grps                = 
-; QM method             
-QMmethod                 = 
-; QMMM scheme           
-QMMMscheme               = normal
-; QM basisset           
-QMbasis                  = 
-; QM charge             
-QMcharge                 = 
-; QM multiplicity       
-QMmult                   = 
-; Surface Hopping       
-SH                       = 
-; CAS space options     
-CASorbitals              = 
-CASelectrons             = 
-SAon                     = 
-SAoff                    = 
-SAsteps                  = 
-; Scale factor for MM charges
-MMChargeScaleFactor      = 1
 
 ; SIMULATED ANNEALING  
 ; Type of annealing for each temperature group (no/single/periodic)
@@ -329,13 +285,13 @@ sim-temp-high            = 300
 
 ; expanded ensemble variables
 nstexpanded              = 10
-lmc-stats                = wang-landau
+lmc-stats                = no
 lmc-move                 = metropolized-gibbs
-lmc-weights-equil        = wl-delta
+lmc-weights-equil        = no
 weight-equil-number-all-lambda = -1
 weight-equil-number-samples = -1
 weight-equil-number-steps = -1
-weight-equil-wl-delta    = 0.001
+weight-equil-wl-delta    = -1
 weight-equil-count-ratio = -1
 
 ; Seed for Monte Carlo in lambda space
@@ -350,7 +306,7 @@ mininum-var-min          = 100
 weight-c-range           = 0
 wl-scale                 = 0.8
 wl-ratio                 = 0.8
-init-wl-delta            = 0.5
+init-wl-delta            = 1
 wl-oneovert              = no
 
 ; Ion/water position swapping for computational electrophysiology setups
@@ -377,3 +333,6 @@ userreal4                = 0
 electric-field-x         = 0 0 0 0
 electric-field-y         = 0 0 0 0
 electric-field-z         = 0 0 0 0
+
+; Density guided simulation
+density-guided-simulation-active = false

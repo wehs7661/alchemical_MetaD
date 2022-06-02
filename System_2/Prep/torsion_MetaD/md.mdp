@@ -54,11 +54,11 @@ tau_t                    = 0.5
 ref_t                    = 298
 
 ; Pressure coupling is on for NPT
-pcoupl                   = Parrinello-Rahman
-pcoupltype               = isotropic
-tau-p                    = 5.0      
-ref-p                    = 1.0      ; bar
-compressibility          = 4.5e-5   ; For water at 1 atm and 300 K the compressibiilty is 4.5e-5 bar^(-1)
+pcoupl                     = no 
+; pcoupltype               = isotropic
+; tau-p                    = 5.0      
+; ref-p                    = 1.0      ; bar
+; compressibility          = 4.5e-5   ; For water at 1 atm and 300 K the compressibiilty is 4.5e-5 bar^(-1)
 ; refcoord_scaling should do nothing since there are no position restraints.
 
 gen_vel                  = no

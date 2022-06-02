@@ -1,0 +1,40 @@
+Section 1: Parameters for data analysis
+=======================================
+- Command line: bootstrap_estimator.py -d ./ -n 20 50 100 200 500 1000 2000 -hh HILLS_2D -t 0.25 -a 0.25 -s 0
+- Current working directory: ./
+- Files analyzed/used: plumed_sum_bias.dat, HILLS_2D, and COLVAR output by the simulation
+- Number of blocks: [20, 50, 100, 200, 500, 1000, 2000]
+- Number of bootstrap iterations: 200
+- Truncated fraction: 0.25
+- Averaged fraction: 0.25
+- Random seed: 0
+- STRIDE in ps: 0.02
+- Simulation temperature: 298.15
+
+Section 2: Results of free energy calculations
+==============================================
++-------------+-----------------+-----------------------------+------------------+
+| # of blocks | Block size (ps) | Free energy difference (kT) | Uncertainty (kT) |
++-------------+-----------------+-----------------------------+------------------+
+|      20     |      7500.00    |           0.591680          |     0.020992     |
+|      50     |      3000.00    |           0.591680          |     0.019950     |
+|     100     |      1500.00    |           0.591680          |     0.025386     |
+|     200     |      750.00     |           0.591680          |     0.030509     |
+|     500     |      300.00     |           0.591680          |     0.027966     |
+|     1000    |      150.00     |           0.591680          |     0.030450     |
+|     2000    |       75.00     |           0.591680          |     0.028170     |
++-------------+-----------------+-----------------------------+------------------+
+
+Section 3: Information about the analysis process
+==================================================
+- Files output by this code: 
+  fes*dat, HILLS*_modified, COLVAR_SUM_BIAS, df_err_bsize_truncate_0.25_avg_0.25.png, fes_results_truncate_0.25_nblocks_multi_avg_0.25.txt
+- Memory usage
++--------------------+------------------+
+|   Function name    | Max memory usage |
++--------------------+------------------+
+|  block_bootstrap   |     24.87 GB     |
+|    average_bias    |     179.96 MB    |
+| read_plumed_output |      1.18 GB     |
++--------------------+------------------+
+- Time elapsed:  2076.93 seconds.

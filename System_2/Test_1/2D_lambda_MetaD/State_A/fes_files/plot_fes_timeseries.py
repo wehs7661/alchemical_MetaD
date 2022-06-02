@@ -49,7 +49,7 @@ if __name__ == "__main__":
         fes = np.array(data['projection'])
 
         df.append((fes[-1] - fes[0]) / conv)
-
+    np.save('df.npy', df)
     t = (np.arange(n_files - 1) + 1) * args.dt / 1000
 
     algo = rpt.Window(width=50, model='l2').fit(np.array(df))

@@ -1,0 +1,75 @@
+                :-) GROMACS - gmx mdrun, 2021.4-plumed-2.8.0 (-:
+
+                            GROMACS is written by:
+     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+        Szilard Pall               Sander Pronk              Roland Schulz       
+       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+       Peter Tieleman              Jon Vincent              Teemu Virolainen     
+     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2021.4-plumed-2.8.0
+Executable:   /jet/home/wehs7661/pkgs/gromacs/2021.4/bin/gmx_mpi
+Data prefix:  /jet/home/wehs7661/pkgs/gromacs/2021.4
+Working dir:  /ocean/projects/cts160011p/wehs7661/alchemical_MetaD/System_2/Test_1/2D_lambda_MetaD/State_B
+Command line:
+  gmx_mpi mdrun -s sys2.tpr -x sys2.xtc -c sys2_output.gro -e sys2.edr -dhdl sys2_dhdl.xvg -g sys2.log -plumed -cpi state.cpt
+
+Reading file sys2.tpr, VERSION 2021.4-plumed-2.8.0 (single precision)
+Changing nstlist from 10 to 40, rlist from 0.9 to 0.999
+
+Using 64 MPI processes
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 2 OpenMP threads per MPI process
+
+starting mdrun 'Generic title in water'
+100000000 steps, 200000.0 ps.
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2021.4-plumed-2.8.0
+Source file: src/gromacs/gmxlib/nonbonded/nb_free_energy.cpp (line 854)
+MPI rank:    32 (out of 64)
+
+Fatal error:
+There are 1 perturbed non-bonded pair interactions beyond the pair-list cutoff
+of 1.0328 nm, which is not supported. This can happen because the system is
+unstable or because intra-molecular interactions at long distances are
+excluded. If the latter is the case, you can try to increase nstlist or rlist
+to avoid this.The error is likely triggered by the use of couple-intramol=no
+and the maximal distance in the decoupled molecule exceeding rlist.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 32 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
