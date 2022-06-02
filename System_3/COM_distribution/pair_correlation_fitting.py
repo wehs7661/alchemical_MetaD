@@ -76,7 +76,7 @@ if __name__ == "__main__":
        })
     # Set the font used for MathJax - more on this later
     rc('mathtext', **{'default': 'regular'})
-    plt.rc('font', family='serif')
+    plt.rc('font', family='Arial')
 
     # 1. Calculate relevant parameters
     r_max = np.linalg.norm(args.vec) / 2 
@@ -84,23 +84,21 @@ if __name__ == "__main__":
     # 2. Read in data and plot q(r) for each simulation.
     data_1 = plumed.read_as_pandas('../Test_1/analysis.dat')
     data_1 = data_1[data_1['lambda']==39]['d']
-    hist_1 = plt.hist(data_1, bins=args.nbins, range=[0, r_max], label='1D $\lambda$-MetaD', alpha=0.8, zorder=10, density=True)
+    hist_1 = plt.hist(data_1, bins=args.nbins, range=[0, r_max], label='1D $\lambda$-MetaD', alpha=0.5, zorder=10, density=True)
 
-    """
-    data_2 = plumed.read_as_pandas('../Test_2/COLVAR')
-    data_2 = data[::100]
-    data_2 = data_2[data_2['lambda']==39]['']
-    """
+    data_2 = plumed.read_as_pandas('../Test_2/trial_4/analysis.dat')
+    data_2 = data_2[data_2['lambda']==39]['d']
+    hist_2 = plt.hist(data_2, bins=args.nbins, range=[0, r_max], label='2D $\lambda$-MetaD', alpha=0.5, zorder=20, density=True)
 
     # 3. Estimate the distribution p(r) corresponding to the given box lengths
     r = []
     for j in range(args.samples):
         r.append(0.5 * np.linalg.norm(np.array(args.vec) * np.random.rand(3)))
             
-    hist_3 = plt.hist(r, bins=args.nbins, range=[0, r_max], label='Real distribution', alpha=0.8, zorder=0, density=True)
+    hist_3 = plt.hist(r, bins=args.nbins, range=[0, r_max], label='Reference', alpha=0.8, zorder=0, density=True, color='magenta')
     # sns.histplot(r, bins=args.nbins, kde=True, stat='probability')
-    plt.xlabel('r')
-    plt.ylabel('p(r)')
+    plt.ylabel('Probability density')
+    plt.xlabel('COM distance (nm)')
     plt.grid()
     plt.legend()
     plt.savefig('pair_correlation_fitting.png', dpi=600)
@@ -112,18 +110,15 @@ if __name__ == "__main__":
     # 4-1: Estimate the peak positions
     print(f'The theoretical peak position is at {min(args.vec) / 2:.3f} nm.')
     peak_1 = find_peak(data_1, args.nbins, args.peak)
-    peak_2 = 0
-    # peak_2 = find_peak(data_2, args.nbins, args.peak)
+    peak_2 = find_peak(data_2, args.nbins, args.peak)
 
     # 4-2. K-S tests
     d_1, p_1 = stats.ks_2samp(r, data_1)
-    d_2, p_2 = 0, 0
-    # d_2, p_2 = stats.ks_2samp(r, data_2)
+    d_2, p_2 = stats.ks_2samp(r, data_2)
 
     # 4-3. RMSE calculation
     RMSE_1 = np.sqrt(np.sum((hist_1[0] - hist_3[0]) ** 2)) / len(hist_1[0])
-    RMSE_2 = 0
-    # RMSE_2 = np.sqrt(np.sum((hist_2[0] - hist_3[0]) ** 2)) / len(hist_2[0])
+    RMSE_2 = np.sqrt(np.sum((hist_2[0] - hist_3[0]) ** 2)) / len(hist_2[0])
     
     if p_1 >= 0.05:
         r_1 = 'Consistent'

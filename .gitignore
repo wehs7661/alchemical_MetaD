@@ -81,3 +81,15 @@ System_2/Test_1/2D_lambda_MetaD/State_B/sys2.log
 System_2/Test_1/2D_lambda_MetaD/State_B/COLVAR_SUM_BIAS
 System_2/Test_1/2D_lambda_MetaD/State_B/sys2.xtc
 System_2/Test_1/2D_lambda_MetaD/State_B/COLVAR
+System_3/Ligand_simulation/lambda_MetaD/HILLS_LAMBDA
+System_3/Ligand_simulation/lambda_MetaD/HILLS_LAMBDA_modified
+System_3/Ligand_simulation/lambda_MetaD/COLVAR_SUM_BIAS
+System_3/Ligand_simulation/lambda_MetaD/COLVAR
+System_3/Ligand_simulation/lambda_MetaD/md.log
+System_3/Ligand_simulation/lambda_MetaD/sys3_gst_md.xtc
+System_3/Solvent_simulation/lambda_MetaD/HILLS_LAMBDA
+System_3/Solvent_simulation/lambda_MetaD/HILLS_LAMBDA_modified
+System_3/Solvent_simulation/lambda_MetaD/COLVAR_SUM_BIAS
+System_3/Solvent_simulation/lambda_MetaD/COLVAR
+System_3/Solvent_simulation/lambda_MetaD/md.log
+System_3/Solvent_simulation/lambda_MetaD/sys3_gst_md.xtc
