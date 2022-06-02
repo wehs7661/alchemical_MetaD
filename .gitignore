@@ -141,3 +141,11 @@ System_3/Vanilla/host/MD/host_md.log
 System_3/Vanilla/complex/sys3_md.xtc
 System_3/Vanilla/complex/md.log
 System_3/Vanilla/complex/md.edr
+System_3/Test_2/weights.npy
+System_3/Test_2/sys3_md.xtc
+System_3/Test_2/COLVAR_SUM_BIAS
+System_3/Test_2/HILLS_2D
+System_3/Test_2/COLVAR
+System_3/Test_2/HILLS_2D_modified
+System_3/Test_2/md.log
+System_3/Test_2/md.edr
